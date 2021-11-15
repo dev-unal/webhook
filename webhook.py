@@ -38,10 +38,18 @@ def makeResponse(req):
     speech = "The forecast for"+city+ "for "+date+" is "+condition
     #speech = "The forecast for"+city+"for "+date+" is "
     return {
-        "speech":speech,
-        "displayText":speech,
-        "source":"apiai-weather-webhook"
-    }
+      "fulfillment_response": {
+        "messages": [
+          {
+            "text": {
+              "text": [
+                "The forecast for"+city+ "for "+date+" is "+condition
+              ]
+            }
+          }
+        ]
+      }
+    };
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT',5000))
