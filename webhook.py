@@ -26,7 +26,8 @@ def webhook():
 def makeResponse(req):
     result = req.get("IntentInfo")
     print(result)
-    parameters = result.get("parameters")
+    intentInfo = result.get("intentInfo")
+    parameters = intentInfo.get("parameters")
     city = parameters.get("geo-city")
     date = parameters.get("date")
     r = requests.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=c1b2a448c14a73cf18d7713a9993c62d')
