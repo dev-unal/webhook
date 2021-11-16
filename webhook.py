@@ -25,6 +25,7 @@ def webhook():
 
 def makeResponse(req):
     result = req.get("IntentInfo")
+    print(result)
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     date = parameters.get("date")
