@@ -38,19 +38,37 @@ def makeResponse(req):
     #         break
     # speech = "The forecast for"+city+ "for "+date+" is "+condition
     # #speech = "The forecast for"+city+"for "+date+" is "
-    return {
-      "fulfillment_response": {
-        "messages": [
-          {
-            "text": {
-              "text": [
-                "Web Service Result : " + person.get('name')
-              ]
+
+    if person.get('name') == 'ünal':
+        return {
+            "fulfillment_response": {
+                "messages": [
+                {
+                    "text": {
+                    "text": [
+                        "Web Service Result : bildirim var"
+                    ]
+                    }
+                }
+                ]
             }
-          }
-        ]
-      }
-    };
+        };
+    else:
+        return {
+            "fulfillment_response": {
+                "messages": [
+                {
+                    "text": {
+                    "text": [
+                        "Web Service Result : bildirim yok"
+                    ]
+                    }
+                }
+                ]
+            }
+        };
+
+
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT',5000))
