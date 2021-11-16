@@ -44,7 +44,7 @@ def makeResponse(req):
           {
             "text": {
               "text": [
-                "The forecast for"
+                "Web Service Result"
               ]
             }
           }
