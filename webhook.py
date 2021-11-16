@@ -2,7 +2,6 @@ import json
 from logging import debug
 import os
 import requests
-import datetime
 
 
 from flask import Flask
@@ -28,25 +27,24 @@ def makeResponse(req):
     result = req.get("sessionInfo")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
-    param_date = parameters.get("date")
-    #x= datetime.datetime(param_date.get('year'),param_date.get('month'),param_date.get('day'))
-    date = "2021-11-16 09:00:00"
-    url = 'http://api.openweathermap.org/data/2.5/forecast?q='+str(city)+'&appid=c1b2a448c14a73cf18d7713a9993c62d'
-    r = requests.get(url)
-    json_object = r.json()
-    weather = json_object['list']
-    for i in range(0,30):
-        if date in weather[i]['dt_txt']:
-            condition= weather[i]['weather'][0]['description']
-            break
-    #speech = "The forecast for"+city+"for "+date+" is "
+    date = '2021-11-16 00:00:00'#parameters.get("date")
+    # url = 'http://api.openweathermap.org/data/2.5/forecast?q='+str(city)+'&appid=c1b2a448c14a73cf18d7713a9993c62d'
+    # r = requests.get(url)
+    # json_object = r.json()
+    # weather = json_object['list']
+    # for i in range(0,30):
+    #     if date in weather[i]['dt_txt']:
+    #         condition= weather[i]['weather'][0]['description']
+    #         break
+    # speech = "The forecast for"+city+ "for "+date+" is "+condition
+    # #speech = "The forecast for"+city+"for "+date+" is "
     return {
       "fulfillment_response": {
         "messages": [
           {
             "text": {
               "text": [
-                "The forecast for "+city+ "for "+date+" is "+condition
+                "The forecast for"
               ]
             }
           }
