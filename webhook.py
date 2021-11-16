@@ -28,7 +28,8 @@ def makeResponse(req):
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     date = parameters.get("date")
-    r = requests.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=c1b2a448c14a73cf18d7713a9993c62d')
+    url = 'http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=c1b2a448c14a73cf18d7713a9993c62d'
+    r = requests.get(url)
     json_object = r.json()
     weather = json_object['list']
     for i in range(0,30):
