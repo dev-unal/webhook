@@ -26,7 +26,7 @@ def webhook():
 def makeResponse(req):
     result = req.get("sessionInfo")
     parameters = result.get("parameters")
-    city = parameters.get("geo-city")
+    person = parameters.get("person")
     date = '2021-11-16 00:00:00'#parameters.get("date")
     # url = 'http://api.openweathermap.org/data/2.5/forecast?q='+str(city)+'&appid=c1b2a448c14a73cf18d7713a9993c62d'
     # r = requests.get(url)
@@ -44,7 +44,7 @@ def makeResponse(req):
           {
             "text": {
               "text": [
-                "Web Service Result"
+                "Web Service Result : " + person.get('name')
               ]
             }
           }
