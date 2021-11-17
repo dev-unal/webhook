@@ -51,6 +51,11 @@ def makeResponse(req):
                     }
                 }
                 ]
+            },
+            "sessionInfo": {
+                "parameters": {
+                    "bildirim": "YES"
+                }
             }
         };
     else:
@@ -65,6 +70,11 @@ def makeResponse(req):
                     }
                 }
                 ]
+            },
+            "sessionInfo": {
+                "parameters": {
+                    "bildirim": "NO"
+                }
             }
         };
 
