@@ -46,7 +46,7 @@ def makeResponse(req):
                 {
                     "text": {
                     "text": [
-                        "Web Service Result : bildirim var"
+                        "Web Service Result : bildirim var\n Sayın" + person.get('name') + ", yardımcı olabileceğim farklı bir konu var mıdır?"
                     ]
                     }
                 }
