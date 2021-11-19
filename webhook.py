@@ -76,7 +76,7 @@ def makeResponse(req):
             "sessionInfo": {
                 "parameters": {
                     "bildirim": "NO",
-                    "vip":"YES"
+                    "vip":"NO"
                 }
             }
         };
